@@ -32,6 +32,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.time.LocalDate;
 
@@ -41,6 +42,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Table(name = "booking")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class booking {
 
     @Id
@@ -48,12 +50,14 @@ public class booking {
     @Column(name = "booking_id")
     private Integer id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_phong")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private phong phong;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private customer customer;
 
     private String status;

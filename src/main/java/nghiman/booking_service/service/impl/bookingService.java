@@ -21,7 +21,12 @@ public class bookingService implements IBookingService {
     private final bookingRepository repository;
     @Override
     public List<booking> getAllBookings() {
-        return repository.findAll();
+        List<booking> bookings = repository.findAll();
+        System.out.println("Found " + bookings.size() + " bookings");
+        for (booking b : bookings) {
+            System.out.println("Booking ID: " + b.getId() + ", Status: " + b.getStatus());
+        }
+        return bookings;
     }
 }
 
