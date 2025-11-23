@@ -4,10 +4,10 @@ package nghiman.booking_service.entity;
  * @author ManNghi
  * @since 19/07/2025 - 15:43
  */
-//public class booking {
+//public class Booking {
 //    private int id;
 //
-//    public booking(int id, int phongId, int customerId, String status, int soLuongNguoi, String dateCheckin, String dateCheckout, String dateBooking) {
+//    public Booking(int id, int phongId, int customerId, String status, int soLuongNguoi, String dateCheckin, String dateCheckout, String dateBooking) {
 //        this.id = id;
 //        this.phongId = phongId;
 //        this.customerId = customerId;
@@ -28,37 +28,32 @@ package nghiman.booking_service.entity;
 //
 //}
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.time.LocalDate;
 
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
-@Table(name = "booking")
+@Data
+@Table(name = "Booking")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class booking {
+public class Booking {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "booking_id")
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_phong")
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    private phong phong;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "customer_id")
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    private customer customer;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "id_phong")
+//    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+//    private Phong Phong;
+//
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "customer_id")
+//    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+//    private Customer Customer;
 
     private String status;
 
@@ -77,7 +72,11 @@ public class booking {
     @Column(name = "created_date")
     private LocalDate createdDate;
 
-    // Getters, Setters, Constructors
+    @Column(name = "id_phong")
+    private Integer idPhong;
+
+    @Column(name = "customer_id")
+    private Integer idCustomer;
 }
 
 

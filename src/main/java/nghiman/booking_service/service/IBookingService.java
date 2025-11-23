@@ -1,6 +1,8 @@
 package nghiman.booking_service.service;
 
-import nghiman.booking_service.entity.booking;
+import nghiman.booking_service.entity.Booking;
+import nghiman.booking_service.entity.response.BaseResponse;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,6 +13,11 @@ import java.util.List;
  */
 @Service
 public interface IBookingService {
-        List<booking> getAllBookings();
+        List<Booking> getAllBookings();
+
+    ResponseEntity<BaseResponse> createNewBooking(Booking bookingReq);
+
+        void update(Integer id, String status);
+
     }
 

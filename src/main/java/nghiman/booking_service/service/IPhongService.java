@@ -1,7 +1,6 @@
 package nghiman.booking_service.service;
 
-import nghiman.booking_service.entity.phong;
-import org.springframework.stereotype.Service;
+import nghiman.booking_service.entity.Phong;
 
 import java.util.List;
 
@@ -11,6 +10,6 @@ import java.util.List;
  */
 
 public interface IPhongService {
-    List<phong> getAllPhongs();
+    List<Phong> getAllPhongs();
 }
 

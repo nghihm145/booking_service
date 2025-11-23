@@ -7,12 +7,12 @@ package nghiman.booking_service.entity;
  * @author ManNghi
  * @since 19/07/2025 - 15:44
  */
-//public class phong {
+//public class Phong {
 //    private int id;
 //    private double gia;
 //    private String loaiPhong;
 //
-//    public phong(int id, double gia, String loaiPhong, String trangThai) {
+//    public Phong(int id, double gia, String loaiPhong, String trangThai) {
 //        this.id = id;
 //        this.gia = gia;
 //        this.loaiPhong = loaiPhong;
@@ -36,9 +36,9 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "phong")
+@Table(name = "Phong")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class phong {
+public class Phong {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

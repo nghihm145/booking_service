@@ -1,7 +1,8 @@
 package nghiman.booking_service.service;
 
-import nghiman.booking_service.entity.customer;
-import org.springframework.stereotype.Service;
+import nghiman.booking_service.entity.Customer;
+import nghiman.booking_service.entity.response.BaseResponse;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
@@ -11,6 +12,10 @@ import java.util.List;
  */
 
 public interface ICustomerService {
-    List<customer> getAllCustomers();
+    List<Customer> getAllCustomers();
+
+    ResponseEntity<BaseResponse> createNewCustomer(Customer customerReq);
+
+    Customer createCustomer(Customer customer);
 }
 
