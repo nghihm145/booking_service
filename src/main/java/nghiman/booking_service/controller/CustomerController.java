@@ -14,8 +14,8 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/customers")
-public class customerController {
-    public customerController(ICustomerService customerService) {
+public class CustomerController {
+    public CustomerController(ICustomerService customerService) {
         this.customerService = customerService;
     }
 

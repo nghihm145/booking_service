@@ -14,8 +14,8 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/booking")
-public class bookingController {
-    public bookingController(IBookingService bookingService) {
+public class BookingController {
+    public BookingController(IBookingService bookingService) {
         this.bookingService = bookingService;
     }
 

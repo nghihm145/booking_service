@@ -2,7 +2,6 @@ package nghiman.booking_service.controller;
 
 import nghiman.booking_service.entity.phong;
 import nghiman.booking_service.service.IPhongService;
-import nghiman.booking_service.service.impl.phongService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,10 +14,10 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/phongs")
-public class phongController {
+public class PhongController {
 
     private final IPhongService phongService;
-    public phongController(IPhongService phongService) {
+    public PhongController(IPhongService phongService) {
         this.phongService = phongService;
     }
     @GetMapping("/get-all-room")
